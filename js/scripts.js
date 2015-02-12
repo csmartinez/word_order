@@ -38,10 +38,15 @@ var wordOrder = function(words) {
 
 $(document).ready( function() {
   $("form#word_order").submit(function(event) {
+    $("#list").text("");
     var words = $("input#words").val();
     var result = wordOrder(words);
 
-    $("#list").text(result);
+    result.forEach(function(word) {
+
+      $("#list").append("<li>" + word + "</li>");
+
+    });
 
     $(".result").show();
 
