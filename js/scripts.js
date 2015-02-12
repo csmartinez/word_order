@@ -36,6 +36,18 @@ var wordOrder = function(words) {
   return sorted_array;
 };
 
+$(document).ready( function() {
+  $("form#word_order").submit(function(event) {
+    var words = $("input#words").val();
+    var result = wordOrder(words);
+
+    $("#list").text(result);
+
+    $(".result").show();
+
+    event.preventDefault();
+  });
+});
 
 //   // loops through each word
 //   for (var i = 0; i < input.length; i++) {
